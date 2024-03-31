@@ -62,7 +62,6 @@ export default function CabinRow({ cabin }) {
   } = cabin;
   const { deleteCabin, isDeleting } = useDeleteCabin();
   const { isCreating, createCabin } = useCreateCabin();
-  const { cabins } = useCabins();
   function handleCopy() {
     createCabin({
       name: `Copy Of ${name}`,
@@ -107,7 +106,7 @@ export default function CabinRow({ cabin }) {
             <Modal.Window name="delete">
               <ConfirmDelete
                 resourceName="cabins"
-                disabled={isDeleting}
+                disabled={isDeleting || isCreating}
                 onConfirm={() => deleteCabin(cabinId)}
               />
             </Modal.Window>
