@@ -7,12 +7,12 @@ import Textarea from "../../ui/Textarea";
 import toast from "react-hot-toast";
 import Spinner from "../../ui/Spinner";
 import FormRow from "../../ui/FormRow";
-import { useCreateCabin } from "./useCreateCabin";
+import { UseCreateCabin } from "./UseCreateCabin";
 import { useEditCabin } from "./UseEditCabin";
 import { useCabins } from "./useCabins";
 
 function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
-  const { isCreating, createCabin } = useCreateCabin();
+  const { isCreating, createCabin } = UseCreateCabin();
   const { isEditing, editCabin } = useEditCabin();
   const isWorking = isCreating || isEditing;
 

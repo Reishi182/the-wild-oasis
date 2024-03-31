@@ -4,7 +4,7 @@ import CreateCabinForm from "./CreateCabinForm";
 import { useDeleteCabin } from "./UseDeleteCabin";
 import { HiPencil, HiTrash } from "react-icons/hi";
 import { HiSquare2Stack } from "react-icons/hi2";
-import { useCreateCabin } from "./useCreateCabin";
+import { UseCreateCabin } from "./UseCreateCabin";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Table from "../../ui/Table";
@@ -61,7 +61,7 @@ export default function CabinRow({ cabin }) {
     description,
   } = cabin;
   const { deleteCabin, isDeleting } = useDeleteCabin();
-  const { isCreating, createCabin } = useCreateCabin();
+  const { isCreating, createCabin } = UseCreateCabin();
   function handleCopy() {
     createCabin({
       name: `Copy Of ${name}`,
